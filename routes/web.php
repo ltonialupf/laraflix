@@ -17,7 +17,8 @@ Route::get('atores/create', [AtoresController::class, 'create'])->middleware('au
 Route::post('atores/store', [AtoresController::class, 'store'])->name('atores.store');
 Route::get('atores/{id}/destroy', [AtoresController::class, 'destroy'])->middleware('auth');
 Route::get('atores/{id}/edit', [AtoresController::class, 'edit'])->middleware('auth')->name('atores.edit');
-Route::put('atores/{id}/update', [AtoresController::class, 'update'])->middleware('auth')->name('atores.update');
+// Route::put('atores/{id}/update', [AtoresController::class, 'update'])->middleware('auth')->name('atores.update');
+Route::put('/atores/{id}', [AtoresController::class, 'update'])->name('atores.update')->middleware('auth')->name('atores.update');
 
 Route::Resource('atores', AtoresController::class)->middleware('auth');
 

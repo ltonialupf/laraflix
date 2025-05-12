@@ -13,7 +13,8 @@
         </div>
     @endif
 
-    {!! Html::form()->action(route('atores.update', $ator->id))->method('PUT')->open() !!}
+    {!! Html::form()->action(route('atores.update', $ator->id))->method('POST')->open() !!}
+        @method('PUT')
         <div class="form-group">
             {!! Html::label('Nome') !!}
             {!! Html::text('nome', 'Nome')->value($ator->nome)->placeholder($ator->nome)->required()->class('form-control') !!}
@@ -21,6 +22,14 @@
         <div class="form-group">
             {!! Html::label('Nacionalidade') !!}
             {!! Html::text('nacionalidade', 'Nacionalidade')->value($ator->nacionalidade)->placeholder($ator->nacionalidade)->required()->class('form-control') !!}
+        </div>
+        <div class="form-group">
+            {!! Html::label('Data de Nascimento') !!}
+            {!! Html::text('data_nascimento', 'Data de Nascimento')->value($ator->data_nascimento)->placeholder($ator->data_nascimento)->required()->class('form-control') !!}
+        </div>
+        <div class="form-group">
+            {!! Html::label('Data de Início das Atividades') !!}
+            {!! Html::text('inicio_atividades', 'Data de Início das Atividades')->value($ator->inicio_atividades)->placeholder($ator->inicio_atividades)->required()->class('form-control') !!}
         </div>
         <div class="form-group d-flex justify-content-between">
             {!! Html::submit('Salvar')->class('btn btn-primary') !!}
