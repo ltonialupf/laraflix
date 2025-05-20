@@ -15,21 +15,24 @@
 
     {!! Html::form()->action(route('atores.store'))->method('POST')->open() !!}
         <div class="form-group">
-            {!! Html::text('nome', 'Nome')->placeholder('Digite o nome do ator')->required()->class('form-control') !!}
+            {!! Html::text('nome', '')->placeholder('Digite o nome do ator')->required()->class('form-control') !!}
         </div>
         <div class="form-group">
-            {!! Html::text('nacionalidade', 'Nacionalidade')->placeholder('Digite a nacionalidade')->required()->class('form-control') !!}
+            {!! Html::label('Nacionalidade') !!}
+            {!! Html::select('nacionalidade_id', \App\Models\Nacionalidade::orderBy('descricao')->pluck('descricao', 'id')->toArray())->required()->class('form-control') !!}
         </div>
         <div class="form-group">
-            {!! Html::date('data_nascimento', 'Data de Nascimento')->required()->class('form-control') !!}
+            {!! Html::date('data_nascimento', '')->required()->class('form-control') !!}
         </div>
         <div class="form-group">
-            {!! Html::date('inicio_atividades', 'Data de Início de Atividades')->required()->class('form-control') !!}
+            {!! Html::date('inicio_atividades', '')->required()->class('form-control') !!}
         </div>
         <div class="form-group d-flex justify-content-between">
             {!! Html::submit('Salvar')->class('btn btn-primary') !!}
             <button type="reset" class="btn btn-secondary">Limpar</button>
         </div>
     {!! Html::form()->close() !!}
+
+    <a href="{{ route('atores.index') }}" class="btn btn-info">Voltar</a>
 @stop
 

@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             {!! Html::label('Nacionalidade') !!}
-            {!! Html::text('nacionalidade', 'Nacionalidade')->value($ator->nacionalidade)->placeholder($ator->nacionalidade)->required()->class('form-control') !!}
+            {!! Html::select('nacionalidade_id', \App\Models\Nacionalidade::orderBy('descricao')->pluck('descricao', 'id')->toArray())->value($ator->nacionalidade)->required()->class('form-control') !!}
         </div>
         <div class="form-group">
             {!! Html::label('Data de Nascimento') !!}
@@ -32,9 +32,10 @@
             {!! Html::text('inicio_atividades', 'Data de Início das Atividades')->value($ator->inicio_atividades)->placeholder($ator->inicio_atividades)->required()->class('form-control') !!}
         </div>
         <div class="form-group d-flex justify-content-between">
-            {!! Html::submit('Salvar')->class('btn btn-primary') !!}
+            {!! Html::submit('Editar')->class('btn btn-primary') !!}
             <button type="reset" class="btn btn-secondary">Limpar</button>
         </div>
     {!! Html::form()->close() !!}
 
+    <a href="{{ route('atores.index') }}" class="btn btn-info">Voltar</a>
 @stop

@@ -10,8 +10,13 @@ class Ator extends Model
 
     protected $fillable = [
         'nome',
-        'nacionalidade',
+        'nacionalidade_id',
         'data_nascimento',
         'inicio_atividades'
     ];
+
+    public function nacionalidade()
+    {
+        return $this->belongsTo("App\Models\Nacionalidade");
+    }
 }

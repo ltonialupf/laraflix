@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AtorRequest extends FormRequest
+class NacionalidadesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class AtorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required|string|min:5',
-            'nacionalidade_id' => 'required',
-            'data_nascimento' => 'required|date',
-            'inicio_atividades' => 'required|date',
+            'descricao' => 'required|string',
         ];
     }
 }

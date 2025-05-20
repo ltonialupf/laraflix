@@ -338,6 +338,17 @@ return [
             'url' => '/atores/create',
             'icon' => 'fas fa-fw fa-user-plus',
         ],
+        ['header' => 'NACIONALIDADES'],
+        [
+            'text' => 'Listagem',
+            'url' => '/nacionalidades',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Adicionar',
+            'url' => '/nacionalidades/create',
+            'icon' => 'fas fa-fw fa-user-plus',
+        ],
         ['header' => 'Configurações'],
         [
             'text' => 'Usuários',
